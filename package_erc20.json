@@ -1,0 +1,11 @@
+{
+  "name": "EqualSmartChainMaker Token ERC20",
+  "version": "1.0.0",
+  "description": "http://www.equalsmart.com/chainmaker.html#ERC20",
+  "main": "erc20_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Wang & Sunny Xiao",
+  "license": "ISC"
+}

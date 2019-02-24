@@ -1,0 +1,7 @@
+nano package.json 
+# 修改localhost to $hostip$ 
+# 修改./explorer/package.json中的 "postinstall": "bower install --allow-root"
+cd app
+nano app.js
+# 修改localhost to $hostip$ 
+cd ..

@@ -1,0 +1,12 @@
+deluser esbcadmin
+sudo rm -r /home/esbcadmin/
+sudo chmod +x addesbcadmin.pl
+sudo expect addesbcadmin.pl
+usermod -aG sudo esbcadmin
+sudo rm /etc/ssl/private/apache-selfsigned.key
+sudo rm /etc/ssl/certs/apache-selfsigned.crt
+sudo chmod +x ssl.pl
+sudo expect ssl.pl
+sudo cp default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+
+sudo cp ssl-params.conf /etc/apache2/conf-available/ssl-params.conf
