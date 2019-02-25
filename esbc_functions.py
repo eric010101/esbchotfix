@@ -58,6 +58,6 @@ def genesis(node1, node2, node3,node4):
 	inplace_change(filex, a, b,filey)
 		
 inputarr=sys.argv
-int casestr = inputarr[1]
+casestr = inputarr[1]
 if casestr=="genesis":
 	genesis(inputarr[2], inputarr[3], inputarr[4],inputarr[5])
