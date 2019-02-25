@@ -24,7 +24,7 @@ def inplace_change(filename, old_string, new_string,outfilename):
         s = f.read()
         if old_string not in s:
             print(old_string,"not found in ",filename)
-            return
+            #return
 
     # Safely write the changed content, if found in the file
     with open(outfilename, 'w') as f:
@@ -58,12 +58,6 @@ def genesis(node1, node2, node3,node4):
 	inplace_change(filex, a, b,filey)
 		
 inputarr=sys.argv
-int casestr = inputarr[1];
+int casestr = inputarr[1]
 if casestr=="genesis":
 	genesis(inputarr[2], inputarr[3], inputarr[4],inputarr[5])
-
-elif casestr=="x2":
-
-elif casestr=="x3":
-
-else:
