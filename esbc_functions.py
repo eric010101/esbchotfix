@@ -76,3 +76,11 @@ if casestr=="passfile":
        		infile="passfile"+str(y)+".txt"
        		print("creating "+infile)
        		writefile(infile,inputarr[2+x],"w")
+if casestr=="nodepassword":
+	y=0
+    	for x in range(0,int(inputarr[2]),1):
+		infile=inputarr[3+x*2]
+		incontent=inputarr[4+x*2]
+		print("creating "+ infile)
+		writefile(infile,incontent,"w")
+		
