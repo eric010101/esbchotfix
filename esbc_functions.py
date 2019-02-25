@@ -4,11 +4,11 @@ import socket
 
 
 def writefile(fname, fcontent, fstyle):
-	f = open(fname, "w")
-	f.write(strpw)
-	# Close opend file
-	f.close()
-	return 1
+        f = open(fname, "w")
+        f.write(fcontent)
+        # Close opend file
+        f.close()
+        return 1
 def get_host_ip():
 	try:
 		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -56,8 +56,23 @@ def genesis(node1, node2, node3,node4):
 	filex="/root/genesis3.json"
 	filey="/root/genesis.json"
 	inplace_change(filex, a, b,filey)
-		
+
+def genesis(node1, node2, node3, node4):	
+
+	a="$acc40node4$"
+	b=node4
+	filex="/root/genesis3.json"
+	filey="/root/genesis.json"
+	inplace_change(filex, a, b,filey)
+	
 inputarr=sys.argv
 casestr = inputarr[1]
 if casestr=="genesis":
 	genesis(inputarr[2], inputarr[3], inputarr[4],inputarr[5])
+if casestr=="passfile":
+   	y=0
+   	for x in range(1,int(inputarr[2])+1,1):
+       		y=y+1
+       		infile="passfile"+str(y)+".txt"
+       		print("creating "+infile)
+       		writefile(infile,inputarr[2+x],"w")
