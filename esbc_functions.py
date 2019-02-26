@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 import sys
 import socket
-
-
 def writefile(fname, fcontent, fstyle):
         f = open(fname, "w")
         f.write(fcontent)
