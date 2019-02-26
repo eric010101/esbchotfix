@@ -64,13 +64,13 @@ if casestr=="genesis":
 elif casestr=="passfile":
    	y=0
    	for x in range(1,int(inputarr[2])+1,1):
-       		y=y+1
-       		infile="passfile"+str(y)+".txt"
-       		print("creating "+infile)
-       		writefile(infile,inputarr[2+x],"w")
+		y=y+1
+		infile="passfile"+str(y)+".txt"
+		print("creating "+infile)
+		writefile(infile,inputarr[2+x],"w")
 elif casestr=="nodepassword":
 	y=0
-    	for x in range(0,int(inputarr[2]),1):
+	for x in range(0,int(inputarr[2]),1):
 		infile=inputarr[3+x*2]
 		incontent=inputarr[4+x*2]
 		print("creating "+ infile)
