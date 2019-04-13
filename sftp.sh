@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt-get install vsftpd
+sudo systemctl start vsftpd
+sudo systemctl enable vsftpd
 sudo addgroup sftp-users
 sudo chmod +x sftp.pl
 sudo expect sftp.pl $1 $2
