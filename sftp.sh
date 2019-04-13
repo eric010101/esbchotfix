@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install vsftpd
+sudo apt-get install vsftpd -y
 sudo systemctl start vsftpd
 sudo systemctl enable vsftpd
 sudo addgroup sftp-users
