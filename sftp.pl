@@ -14,7 +14,7 @@ if {$force_conservative} {
 set username [lindex $argv 0];
 set password [lindex $argv 1];
 set timeout -1
-spawn adduser $username;
+spawn sudo adduser $username;
 match_max 100000
 expect -exact "New password: "
 send -- $password;
