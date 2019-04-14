@@ -3,7 +3,7 @@
 sudo apt-get install expect -y
 sudo addgroup esbc
 sudo chmod +x sftp.pl
-sudo expect sftp2.pl $1 $2
+sudo expect sftp.pl $1 $2
 sudo usermod -G esbc -s /bin/false $1
 sudo addgroup ssh-users
 sudo usermod -a -G ssh-users root
