@@ -120,8 +120,8 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
-AllowGroups ssh-users sftp-users
-Match Group sftp-users
+AllowGroups ssh-users esbc
+Match Group esbc
 ChrootDirectory /var/www
 AllowTcpForwarding no
 X11Forwarding no
