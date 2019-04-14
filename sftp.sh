@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get install expect -y
 sudo addgroup esbc
 sudo chmod +x sftp.pl
 sudo expect sftp.pl $1 $2
