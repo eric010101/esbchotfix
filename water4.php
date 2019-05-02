@@ -10,7 +10,7 @@ function strToHex($string){
     return strToUpper($hex);
 }
 
-$conn = new mysqli("localhost", "ZHadmin", "ZHhappy", "esbc_water");
+$conn = new mysqli("localhost", "ESBCadmin", "ESBChappy", "esbc_water");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
