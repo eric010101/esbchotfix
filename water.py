@@ -23,8 +23,8 @@ def on_message(client, userdata, msg):
     #db = mysql.connector.connect("localhost","ESBCadmin","ESBChappy","esbc_water")
     db = mysql.connector.connect(
        host="localhost",
-       user="ZHadmin",
-       passwd="ZHhappy",
+       user="ESBCadmin",
+       passwd="ESBChappy",
        database="esbc_water"
     )
     cursor = db.cursor()
@@ -64,7 +64,7 @@ def on_message(client, userdata, msg):
         db.commit() #commit the insert
         print("insert OK")
         cursor.close()  #close the cursor
-        url = 'http://104.238.177.110/phpweb3/esbc_public/water4.php'
+        url = 'http://localhost/phpweb3/esbc_public/water4.php'
         r = requests.get(url)
         #r.text
         print(r.text)
