@@ -20,7 +20,7 @@ def on_message(client, userdata, msg):
     data = str(msg.payload)
     print(data)
     #return 1
-    #db = mysql.connector.connect("localhost","ZHadmin","ZHhappy","esbc_water")
+    #db = mysql.connector.connect("localhost","ESBCadmin","ESBChappy","esbc_water")
     db = mysql.connector.connect(
        host="localhost",
        user="ZHadmin",
