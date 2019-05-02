@@ -1,0 +1,12 @@
+[Unit]
+Description=water.service
+After=multi-user.target
+[Service]
+Type=forking
+ExecStart=/usr/bin/python3 /root/water.py >/dev/null 2>&1
+TimeoutStopSec=110
+Restart=on-failure
+RestartSec=110s
+[Install]
+WantedBy=multi-user.target
+
