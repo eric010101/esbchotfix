@@ -135,7 +135,7 @@ for ($i=0; $i<$txsize; $i++) {
 			}
 			$sql13 = "UPDATE WLB SET BlockN ='".$blockn."' WHERE Hash like '".$txhashhex."'";
 			#echo $sql12."<br>";
-			if (mysqli_query($conn, $sql12)) {
+			if (mysqli_query($conn, $sql13)) {
 				echo "update OK~";	
 			}
 			$sql14 = "insert into blockn (`blockn`,`txhash`) VALUES ('". $blockn ."','". $txhashhex ."')" ;
