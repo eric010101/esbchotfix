@@ -6,12 +6,16 @@ import time
 #import web3
 import json
 import requests
+import datetime
+import pytz
 
+tz = pytz.timezone('Asia/Shanghai') #东八区
 #from web3.auto import w3
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe("Plant-1/Data/Count/#")
+    #client.subscribe("Plant-1/Data/Count/#")
+    client.subscribe("Plant-1/#")
 
 def on_message(client, userdata, msg):
     #print(msg.topic+" "+str(msg.payload))
@@ -54,6 +58,8 @@ def on_message(client, userdata, msg):
     print(numdata7)
     print(numdata8)
     timenow=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+    if numdata8 == "12345678" :
+        numdata2=datetime.datetime.fromtimestamp(int(time.time()), pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
     # MySQL EXECUTION
     try:
         sqlquery = "INSERT INTO `WLB` (id,Rtime,TDS1,TDS2,COD,TOC,UV254,flow,RecordTime) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
