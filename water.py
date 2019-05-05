@@ -60,6 +60,8 @@ def on_message(client, userdata, msg):
     timenow=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
     if numdata8 == "12345678" :
         numdata2=datetime.datetime.fromtimestamp(int(time.time()), pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')
+    if numdata8 != "12345678" :    
+        numdata1 = "0"+numdata1
     # MySQL EXECUTION
     try:
         sqlquery = "INSERT INTO `WLB` (id,Rtime,TDS1,TDS2,COD,TOC,UV254,flow,RecordTime) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
