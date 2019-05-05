@@ -4,9 +4,9 @@ After=multi-user.target
 [Service]
 Type=forking
 ExecStart=/usr/bin/python3 /root/water.py >/dev/null 2>&1
-TimeoutStopSec=110
+TimeoutStopSec=2
 Restart=on-failure
-RestartSec=110s
+RestartSec=1s
 [Install]
 WantedBy=multi-user.target
 
