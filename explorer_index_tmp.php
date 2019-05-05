@@ -129,12 +129,25 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div>
-            <a class="navbar-brand" href="?" style="font-size: 36px;">ChainMaker Explorer - $ESBC_HEADTITLE$</a>
+    <?php if (isset($_GET['title'])) {
+           $title=$_GET['title'];
+           } else {		//  Fallback behaviour goes here
+				 $title="齐智百億之链";
+			}
+	?>
+            <a class="navbar-brand" href="?" style="font-size: 36px;">ChainMaker Explorer - <?php echo $title ?></a>
         </div>
     </nav>
 
     <div id="logo">
-        <img src="logo1.jpeg" alt="齐智科技" height="100" width="30">        
+        	<?php if (isset($_GET['logo'])) {
+           $logo=$_GET['logo'];
+           } else {
+				//  Fallback behaviour goes here
+				 $logo="logo1.jpeg";
+			}
+	?>
+        <img src="<?php echo $logo ?>" alt="齐智科技" height="100" width="100">        
     </div>
 
     <div id="app" class="container">
