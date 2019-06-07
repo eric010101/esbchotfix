@@ -3,7 +3,7 @@ Description=water.service
 After=multi-user.target
 [Service]
 Type=forking
-ExecStart=/usr/bin/python3 /root/water.py
+ExecStart=/usr/bin/python3 /root/water.py >/dev/null 2>&1
 TimeoutStopSec=2
 Restart=on-failure
 RestartSec=1s
