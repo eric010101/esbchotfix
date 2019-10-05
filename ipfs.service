@@ -1,0 +1,15 @@
+[Unit]
+Description=IPFS daemon
+After=network.target
+
+[Service]
+Type=forking
+User=root
+Group=root
+ExecStart=/snap/bin/ipfs daemon
+PermissionsStartOnly=true
+TimeoutSec=600
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
