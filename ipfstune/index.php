@@ -66,6 +66,13 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 <title></title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link href="layout.css" rel="stylesheet" type="text/css" />
+<style>
+div.a {
+width: 800px;
+overflow-wrap: break-word;
+border: 1px solid black;  
+}
+</style>
 
 </head>
 
@@ -78,9 +85,10 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 					
 					<img src="images/equalsmart logo2.jpg" alt="equalsmart logo2" width="100" height="50">
 
-					<br><br><h2>下列檔案是一個<?php echo $type ?>型態檔案，經由手機上傳至行星檔案編碼服務系統，經過數位編碼後，<p>
-								產生Hash數位身分證。由於檔案已完成數位資產化，並寫入區塊鏈，因此具有全球唯一性，且無法修改。<p>
-								此檔案具有不可否認性，透過此技術，可運用於數位資產的保存與保值，歡迎與<a href="http://equalsmart.com">我們洽談合作</a>。</h2>
+					<br><br><h2>下列檔案經ESBC服務器編碼後，產生Hash數位身分證，並寫入ESBC區塊鏈<p>
+						因此具有全球唯一性，不可否認，亦無法修改。<P>
+						透過此技術，您可對珍貴的數位資產進行確權與保值。<p>
+						歡迎與<a href="http://equalsmart.com">我們洽談合作</a>。</h2>
 				</div>				
 
 			</div>
@@ -113,7 +121,7 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 													echo '</video>';
 												   }
 												   if ($type=='image'){
-													echo '<img src="'.$ref_i.'" alt="ipfs image" width="400" height="300">';											   
+													echo '<img src="'.$ref_i.'" alt="ipfs image" width="400">';											   
 												   }
 												 ?>
 												</div>
@@ -145,15 +153,15 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 		<!--footer -->
 		<div id="footer">
 			<div class="main">
-				以上服務是由<a href="http://equalsmart.com">齐智(福州)科技公司</a>為您提供; 2019 | <a href="index-3.html">智恆科技園區孵化器進駐廠商</a> &nbsp;
+				以上服務是由<a href="http://equalsmart.com">齐智(福州)科技公司</a>為您提供; 2020 | <a href="http://equalsmart.com">ESBC快速造鏈</a> &nbsp;
 			</div>
 		</div>
 		<!--footer end-->
 	</div>	
-		<div id="footer_row" align='left'>
-			<div class="main" align='left'>
-
+		<div id="main" class="a">
+			<div align="left" class="a">
 					<br><br><h2>下列資料是儲存本檔案Hash數位身分證的區塊詳細資料。</h2>			
+					
 				<?php
 	require('./exampleBase.php');
 	$eth = $web3->eth;
@@ -163,7 +171,7 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 		echo 'Error: ' . $err->getMessage();
 		return;
 	}
-	 echo "block detail:<br>";
+	 echo "<table><tr><td>block detail:<br>";
 	 if (sizeof($block->transactions)>0) {
 	   $str="";
 	   $trans=$block->transactions;
@@ -180,7 +188,7 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 		  $str=$str.'gasPrice= '.hexdec($tran->{'gasPrice'}).'<BR>'.PHP_EOL;
 		  $str=$str.'value= '.hexdec($tran->{'value'}).'<BR>'.PHP_EOL;
 		  $str=$str.'nonce= '.$tran->{'nonce'}.'<BR>'.PHP_EOL;
-		  $str=$str.'Input hex= '.$tran->{'input'}.'<BR>'.PHP_EOL;
+		  $str=$str.'<div class="a">Input hex= '.$tran->{'input'}.'<BR></div>'.PHP_EOL;
 		  $hex=$tran->{'input'};
 		  // $a=hexToStr($hex);
 		  $string='';
@@ -206,6 +214,7 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
 	});
 
 ?>
+</td></tr></table>
 			</div>
 		</div>
 </body>
