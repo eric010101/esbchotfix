@@ -128,6 +128,16 @@
 
 <body>
     <nav class="navbar navbar-light bg-light">
+    <div id="logo">
+        	<?php if (isset($_GET['logo'])) {
+           $logo=$_GET['logo'];
+           } else {
+				//  Fallback behaviour goes here
+				 $logo="logo1.jpeg";
+			}
+	?>
+        <img src="<?php echo $logo ?>" alt="齐智科技" height="100" width="100">        
+    </div>	    
         <div>
     <?php if (isset($_GET['title'])) {
            $title=$_GET['title'];
@@ -139,16 +149,7 @@
         </div>
     </nav>
 
-    <div id="logo">
-        	<?php if (isset($_GET['logo'])) {
-           $logo=$_GET['logo'];
-           } else {
-				//  Fallback behaviour goes here
-				 $logo="logo1.jpeg";
-			}
-	?>
-        <img src="<?php echo $logo ?>" alt="齐智科技" height="100" width="100">        
-    </div>
+
 
     <div id="app" class="container">
         <h1>Blocks</h1>
