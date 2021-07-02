@@ -84,7 +84,7 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect("80.240.21.98", 1883, 100)
+client.connect("199.247.17.178", 1883, 100)
 
 client.loop_forever()
 
