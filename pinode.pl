@@ -21,14 +21,14 @@ set acc40 [lindex $argv 2]
 
 # 构造 geth 命令
 if {$rpcport == "8545"} {
-    set cmd "sudo /usr/bin/geth --datadir $hostroot/$devroot/$nodeid/data --networkid 12345 --port $port1 --http --http.addr '$ip' --http.port $rpcport --http.api 'admin,personal,eth,net,web3,txpool,miner' --allow-insecure-unlock --unlock $acc40 --password $hostroot/$devroot/$nodeid/password.txt --nodiscover console"
+    set cmd "sudo geth --datadir $hostroot/$devroot/$nodeid/data --networkid 12345 --port $port1 --http --http.addr '$ip' --http.port $rpcport --http.api 'admin,personal,eth,net,web3,txpool,miner' --allow-insecure-unlock --unlock $acc40 --password /opt/eth/devroot/$nodeid/password.txt --nodiscover console"
 } else {
-    set cmd "sudo /usr/bin/geth --datadir $hostroot/$devroot/$nodeid/data --networkid 12345 --port $port1 --http --http.addr '$ip' --http.port $rpcport --http.api 'admin,shh,personal,db,eth,net,web3,txpool,miner' --unlock $acc40 --password $hostroot/$devroot/$nodeid/password.txt --nodiscover console"
+    set cmd "sudo geth --datadir $hostroot/$devroot/$nodeid/data --networkid 12345 --port $port1 --http --http.addr '$ip' --http.port $rpcport --http.api 'admin,shh,personal,db,eth,net,web3,txpool,miner' --unlock $acc40 --password /opt/eth/devroot/$nodeid/password.txt --nodiscover console"
 }
-            #sudo geth --datadir /opt/eth/devroot/node1/data --networkid 12345 --port 2001 --http --http.addr 'localhost' --http.port 8543 --http.api 'admin,personal,eth,net,web3,txpool,miner' --allow-insecure-unlock --unlock 4f22C714E7b4B8ab889ecB364fA4802091b1ed76 --password /opt/eth/devroot/node1/password.txt --nodiscover console
+#sudo geth --datadir /opt/eth/devroot/node1/data --networkid 12345 --port 2001 --http --http.addr 'localhost' --http.port 8543 --http.api 'admin,personal,eth,net,web3,txpool,miner' --allow-insecure-unlock --unlock 4f22C714E7b4B8ab889ecB364fA4802091b1ed76 --password /opt/eth/devroot/node1/password.txt --nodiscover console
 
 # 启动 geth
-spawn -noecho $cmd 2>> $hostroot/$devroot/enode_$nodeid.log
+spawn -noecho $cmd 2>> /opt/eth/devroot/enode_$nodeid.log
 
 # 你可以在这里使用 send 和 expect 命令来与 geth 控制台交互
 expect ">"
